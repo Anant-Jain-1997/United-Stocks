@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  UnitedStock
 //
-//  Created by csuftitan on 6/8/22.
+//  Created by Irvin on 6/8/22.
 //
 
 import SwiftUI
