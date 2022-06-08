@@ -1,0 +1,12 @@
+//
+//  Search.swift
+//  UnitedStock
+//
+//  Created by csuftitan on 6/8/22.
+//
+
+import Foundation
+class SearchAPI{
+    
+    // add code here
+}
