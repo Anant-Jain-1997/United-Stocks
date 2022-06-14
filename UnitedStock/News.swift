@@ -28,5 +28,5 @@ struct responseNews{
 
 struct newsAPI{
     // enter your api key between " "
-    let apiKEY : "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=API_KEY"
+    //let apiKEY : "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=API_KEY"
 }
