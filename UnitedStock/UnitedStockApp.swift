@@ -2,7 +2,7 @@
 //  UnitedStockApp.swift
 //  UnitedStock
 //
-//  Created by csuftitan on 6/8/22.
+//  Created by Irvin on 6/8/22.
 //
 
 import SwiftUI
@@ -17,13 +17,13 @@ struct UnitedStockApp: App {
 }
 
 class User {
-    //if they fill out all the information then they will change member var to the information provided
-    init(name: String, age: Int, password: String, username: String, favstock: String) {
+    //initializer sets all member variables
+    init(name: String, age: Int, password: String, username: String, favStock: String) {
         self.name = name
         self.age = age
         self.password = password
         self.username = username
-        self.favstock = favstock
+        self.favStock = favStock
     }
     
     //this initializer is the same, except if the user provides no favorite stock it is left as blank
@@ -32,7 +32,7 @@ class User {
         self.age = age
         self.password = password
         self.username = username
-        self.favstock = ""
+        self.favStock = ""
     }
     
     
@@ -41,5 +41,18 @@ class User {
     var password: String
     var name: String
     var age: Int
-    var favstock: String
+    var favStock: String
+    
+    func changeFavStock(to favStock: String) -> Void {
+        self.favStock = favStock
+    }
+    func changeName(to name: String) -> Void {
+        self.name = name
+    }
+    func changeAge(username: String) -> Void {
+        self.username = username
+    }
+    func changePassword(password: String) -> Void {
+        self.password = password
+    }
 }
