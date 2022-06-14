@@ -16,6 +16,7 @@
 		7A18129528511E450064B9F7 /* UnitedStockUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18129428511E450064B9F7 /* UnitedStockUITestsLaunchTests.swift */; };
 		7A1812A228511E790064B9F7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7A1812A128511E790064B9F7 /* .gitignore */; };
 		7A1812A428511EB90064B9F7 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 7A1812A328511EB90064B9F7 /* .gitattributes */; };
+		7A9B57022855A248002E6B42 /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B57012855A248002E6B42 /* WatchlistView.swift */; };
 		7AE39EA62851452600402D7C /* Watchlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE39EA52851452600402D7C /* Watchlist.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		7A18129428511E450064B9F7 /* UnitedStockUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitedStockUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7A1812A128511E790064B9F7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7A1812A328511EB90064B9F7 /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		7A9B57012855A248002E6B42 /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
 		7AE39EA52851452600402D7C /* Watchlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watchlist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 				7A18127B28511E450064B9F7 /* Assets.xcassets */,
 				7A18127D28511E450064B9F7 /* Preview Content */,
 				7AE39EA52851452600402D7C /* Watchlist.swift */,
+				7A9B57012855A248002E6B42 /* WatchlistView.swift */,
 			);
 			path = UnitedStock;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A9B57022855A248002E6B42 /* WatchlistView.swift in Sources */,
 				7A18127A28511E430064B9F7 /* ContentView.swift in Sources */,
 				7A18127828511E430064B9F7 /* UnitedStockApp.swift in Sources */,
 				7AE39EA62851452600402D7C /* Watchlist.swift in Sources */,
@@ -436,6 +440,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -445,7 +450,7 @@
 				PRODUCT_NAME = UnitedStocks;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -464,6 +469,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,7 +479,7 @@
 				PRODUCT_NAME = UnitedStocks;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

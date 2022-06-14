@@ -31,8 +31,7 @@ class Watchlist
 
     
     // Methods
-    func addStockWatchlist () -> Bool // Return is Bool because it checks if stock is successfuly add (returns true)
-                                   // if failed (return false)
+    func addStockWatchlist () -> Bool // Return is Bool because it checks if stock is successfuly add (returns true) if failed (return false)
     {
         // dummy return
         return true
@@ -54,6 +53,11 @@ class Watchlist
     }
     
     func filterWatchlist () -> Void // Filters the watchlist by low/high price
+    {
+        
+    }
+    
+    func rearrangeWatchlist () -> Void // Organizes the watchlist however the users wants
     {
         
     }
