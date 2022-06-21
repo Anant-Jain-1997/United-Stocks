@@ -19,7 +19,6 @@ struct UserLinkMod: ViewModifier {
 struct UserTitlesMod: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .padding()
             .foregroundColor(.red)
             .font(.custom("Arial", size: 30))
     }

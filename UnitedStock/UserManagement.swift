@@ -7,7 +7,7 @@
 
 import Foundation
 
-class User {
+class User : ObservableObject {
     //initializer sets all member variables
     init(name: String, age: Int, password: String, username: String, favStock: String) {
         self.name = name
@@ -28,11 +28,11 @@ class User {
     
     
     //user variables
-    var username: String
-    var password: String
-    var name: String
-    var age: Int
-    var favStock: String
+    @Published var username: String
+    @Published var password: String
+    @Published var name: String
+    @Published var age: Int
+    @Published var favStock: String
     
     //these are for when a user changes their settings, it might be removed later since they can just do user.favStock = "new fav stock"
     func changeFavStock(to favStock: String) -> Void {
@@ -48,5 +48,32 @@ class User {
         self.password = password
     }
 }
+
+class userManager: ObservableObject {
+    @Published var users: [User] = []
+    
+    var volunteerList: String {
+        var list: String = ""
+        if !users.isEmpty {
+            for user in users {
+                list += user.name + " "
+            }
+        } else {
+            list = "No volunteers"
+        }
+        return list
+    }
+    
+    func user(_ user: User) {
+        let newCopy = User(name: user.name, age: user.age, password: user.password, username: user.username)
+        users.append(newCopy)
+    }
+    
+    init() {
+        
+    }
+}
+
+
 
 
