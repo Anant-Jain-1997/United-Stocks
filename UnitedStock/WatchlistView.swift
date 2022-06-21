@@ -8,56 +8,73 @@
 
 import SwiftUI
 
-struct WatchlistView: View
-{
-    var body: some View
-    {
-        VStack
-        {
-            NavigationView
-            {
-                List
-                {
-                    HStack
-                    {
-                        Text("APPL")
-                        Spacer()
-                        Text("$")
-                        Text("0.00").font(.headline).foregroundColor(Color.green)
+struct WatchlistView: View{
+//    @EnvironmentObject var stockManager: Watchlist
+    var body: some View{
+        NavigationView{
+            VStack{
+                List{
+//                    ForEach(stockManager.stocks){
+//                        WatchlistStocks in
+//                        VStack (alignment: .leading) {
+//                            Text(WatchlistStocks.stockName)
+//                                .font(.largeTitle)
+//                            Text(WatchlistStocks.description)
+//                                .font(.caption)
+//                        }
+//                    }.onDelete {
+//                        offset in
+//                        manager.crosswalks.remove(atOffsets: offset)
+//                    }
+                    HStack{
+                        // NavigationLink for more details about the stock
+                        NavigationLink(destination: Text("APPL View")){
+                            Text("APPL")
+                            Spacer()
+                            Text("$")
+                            Text("0.00").font(.headline).foregroundColor(Color.green)
+                        }
                     }
-                    HStack
-                    {
-                        Text("LCID")
-                        Spacer()
-                        Text("$")
-                        Text("0.00").font(.headline).foregroundColor(Color.green)
+                    HStack{
+                        // NavigationLink for more details about the stock
+                        NavigationLink(destination: Text("LCID View")){
+                            Text("LCID")
+                            Spacer()
+                            Text("$")
+                            Text("0.00").font(.headline).foregroundColor(Color.green)
+                        }
                     }
-                    HStack
-                    {
-                        Text("GOOG")
-                        Spacer()
-                        Text("$")
-                        Text("0.00").font(.headline).foregroundColor(Color.green)
+                    HStack{
+                        // NavigationLink for more details about the stock
+                        NavigationLink(destination: Text("GOOG View")){
+                            Text("GOOG")
+                            Spacer()
+                            Text("$")
+                            Text("0.00").font(.headline).foregroundColor(Color.green)
+                        }
                     }
-                    HStack
-                    {
-                        Text("AMZN")
-                        Spacer()
-                        Text("$")
-                        Text("0.00").font(.headline).foregroundColor(Color.green)
+                    HStack{
+                        // NavigationLink for more details about the stock
+                        NavigationLink(destination: Text("AMZN View")){
+                            Text("AMZN")
+                            Spacer()
+                            Text("$")
+                            Text("0.00").font(.headline).foregroundColor(Color.green)
+                        }
                     }
-                    HStack
-                    {
-                        Text("NVDA")
-                        Spacer()
-                        Text("$")
-                        Text("0.00").font(.headline).foregroundColor(Color.green)
+                    HStack{
+                        // NavigationLink for more details about the stock
+                        NavigationLink(destination: Text("NVDA View")){
+                            Text("NVDA")
+                            Spacer()
+                            Text("$")
+                            Text("0.00").font(.headline).foregroundColor(Color.green)
+                        }
                     }
-                }.navigationTitle("Watchlist")
-            }
+                }
+            }.navigationTitle("Watchlist")
         }
     }
-    
 }
 
 struct WatchlistView_Previews: PreviewProvider {

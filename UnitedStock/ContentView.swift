@@ -9,9 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Welcome to UnitedStocks").font(.headline).foregroundColor(Color.black).padding().background(Color.green)
-        
-    }
+        WatchlistView()
+        }
 }
 
 struct ContentView_Previews: PreviewProvider {
