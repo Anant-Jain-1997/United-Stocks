@@ -14,9 +14,17 @@ struct ContentView: View {
                 Text("Tab Content 1")
                     .navigationTitle("TOP NEWS")
             }
-            .tabItem { Text("Top News") }.tag(1)
-            Text("Tab Content 2").tabItem { Text("All News") }.tag(2)
-            Text("Tab Content 3").tabItem { Text("Saved News") }.tag(3)
+            .tabItem { Text("All News") }.tag(1)
+            NavigationView {
+                Text("Tab Content 2")
+                    .navigationTitle("NEWS")
+            }
+            .tabItem { Text("All News") }.tag(2)
+            NavigationView {
+                Text("Tab Content 3")
+                    .navigationTitle("SAVED NEWS")
+            }
+            .tabItem { Text("Saved News") }.tag(3)
         }
     }
 }

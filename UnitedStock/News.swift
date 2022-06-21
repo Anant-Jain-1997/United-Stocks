@@ -9,16 +9,17 @@ import Foundation
 import SwiftUI
 
 
-struct viewNews{
+struct viewNews: Identifiable {
     
-    var uuid_ID : UUID {return UUID ()}
+    var uuid_ID: UUID {return UUID ()}
     
-    var newsTitle : String
+    var newsTitle: String
     
-    var newsURL : String
+    var newsURL: String
     
-    var newsURLToImage : String?
+    var newsURLToImage: String?
     
+    var desc: String
     
 }
 
@@ -26,7 +27,15 @@ struct responseNews{
     var articles: [viewNews]
 }
 
-struct newsAPI{
-    // enter your api key between " "
-    //let apiKEY : "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=API_KEY"
+class retrieveData: ObservableObject{
+    
+    @Published var newsData = [viewNews]()
+    
+    init(){
+        
+        let source = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=API_KEY"
+        
+        let url = URL(String: url )
+    }
+    
 }
