@@ -4,58 +4,67 @@
 //
 //  Created by csuftitan on 6/8/22.
 //
-
 import SwiftUI
 
 struct ContentView: View {
-    @State var searchText = " "
-    let myStocks = [
-    "APPLE INC $129.67","Tesla $399.23 ","PEPSI CO  $127.45"
-    ,"Google INC $210.35",]
-    
+    @State var stock: String = " "
+    var body: some View {
+        GeometryReader { geometry in
+        VStack{
+            VStack{
+                Text("United Stocks")
+                .font(.custom("Courier New",size: 30))
+                .foregroundColor(Color.white)
+                .padding()
+                .background(Color.black)
+                .cornerRadius(10)
+                HStack(spacing: 0){
+                    Text("Stock Name:")
+                        .frame(width: 100)
+                        .border(Color.clear)
+                    TextField(" Search", text: $stock)
+                        .frame(width: 200)
+                        .border(Color.black)
+                    Spacer()
+                }
+            }
+        }.frame(height: geometry.size.height/5)
+            Spacer()
+            VStack{
+                HStack{
+                    Text("APPLE INC")
+                        .padding()
+                    Text("$178.75")
+                }
+            }.frame(height: geometry.size.height/1)
+                VStack{
+                    HStack{
+                        Spacer()
+                        NavigationLink(destination: StocksInfoLinks()){
+                            Text("APPLE INC")
+                        }
+                }
+                Spacer()
+            }.frame(height: geometry.size.height/3)
+        }
+    }
+        }
+
+
+
+struct StocksInfoLinks: View {
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading) {
-            ZStack {
-                Rectangle()
-                    .foregroundColor(Color("DarkGray"))
-                HStack{
-                    Image(systemName: "magnifyingglass")
-                    TextField("Search..", text: $searchText)
-                }
-                    .foregroundColor(.gray)
-                    .padding(.leading,13)
-            }
-            .frame(height: 50 )
-            .cornerRadius(13)
-            .padding()
-                
-                List(myStocks,id: \.self){ stocks in
-                    Text(stocks)
-                
+            VStack {
+                List {
+                    Section(header: Text("Stocks")) {
+                        NavigationLink(destination: Text("🍎🍏🍏")) {
+                            Text("Stocks ")
+                        }
+                    }
                 }
             }
-            .listStyle(GroupedListStyle())
-            .navigationTitle("Stocks")
         }
-    }
-    }
-struct SearchBar: View {
-    @Binding var searchText: String
-    var body: some View{
-        ZStack {
-            Rectangle()
-                .foregroundColor(Color("LightGray"))
-            HStack{
-                Image(systemName: "magnifyingglass")
-                TextField("Search... ", text: $searchText)
-            }
-            .foregroundColor(.gray)
-            .padding(.leading,13)
-        }
-        .frame(height: 40)
-        .cornerRadius(13)
-        .padding()
     }
 }
 
@@ -64,3 +73,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+                
