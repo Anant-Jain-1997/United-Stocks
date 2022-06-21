@@ -15,6 +15,8 @@
 		7A18129528511E450064B9F7 /* UnitedStockUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18129428511E450064B9F7 /* UnitedStockUITestsLaunchTests.swift */; };
 		7A1812A228511E790064B9F7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7A1812A128511E790064B9F7 /* .gitignore */; };
 		7A1812A428511EB90064B9F7 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 7A1812A328511EB90064B9F7 /* .gitattributes */; };
+		7A95F5AA2861370E0083387F /* UserViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A95F5A92861370E0083387F /* UserViews.swift */; };
+		7A95F5AE28613FE40083387F /* UserViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A95F5AD28613FE40083387F /* UserViewModifiers.swift */; };
 		7AE0753F285A5EF30003AB55 /* UserManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE0753E285A5EF30003AB55 /* UserManagement.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		7A18129428511E450064B9F7 /* UnitedStockUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitedStockUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7A1812A128511E790064B9F7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7A1812A328511EB90064B9F7 /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		7A95F5A92861370E0083387F /* UserViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViews.swift; sourceTree = "<group>"; };
+		7A95F5AD28613FE40083387F /* UserViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModifiers.swift; sourceTree = "<group>"; };
 		7AE0753E285A5EF30003AB55 /* UserManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +106,8 @@
 			children = (
 				7A18127728511E430064B9F7 /* UnitedStockApp.swift */,
 				7A18127928511E430064B9F7 /* ContentView.swift */,
+				7A95F5AD28613FE40083387F /* UserViewModifiers.swift */,
+				7A95F5A92861370E0083387F /* UserViews.swift */,
 				7A18127B28511E450064B9F7 /* Assets.xcassets */,
 				7AE0753E285A5EF30003AB55 /* UserManagement.swift */,
 			);
@@ -257,6 +263,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A18127A28511E430064B9F7 /* ContentView.swift in Sources */,
+				7A95F5AA2861370E0083387F /* UserViews.swift in Sources */,
+				7A95F5AE28613FE40083387F /* UserViewModifiers.swift in Sources */,
 				7AE0753F285A5EF30003AB55 /* UserManagement.swift in Sources */,
 				7A18127828511E430064B9F7 /* UnitedStockApp.swift in Sources */,
 			);
