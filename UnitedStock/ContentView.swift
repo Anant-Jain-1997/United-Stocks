@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        WatchlistView()
-        }
+        WatchlistView()//.environmentObject(WatchlistView)
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

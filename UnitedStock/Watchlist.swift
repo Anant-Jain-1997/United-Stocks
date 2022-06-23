@@ -7,29 +7,16 @@
 
 import Foundation
 
-class Watchlist: ObservableObject
-{
-    @Published var stocks: [WatchlistStocks] = []
+class Watchlist: ObservableObject{
+    @Published var stocks: [WatchlistProps] = []
+    
     // Initializer (constructor)
-    init(stockName: String, symbol: String, about: String, price: Double)
-    {
-//        self.stockName = stockName
-//        self.symbol    = symbol
-//        self.about     = about
-//        self.price     = price
-        
-        stocks.append(WatchlistStocks(stockName: "Apple", symbol: "APPL", description: "Tech stock", price: "$131.56"))
-        stocks.append(WatchlistStocks(stockName: "Lucid Motors", symbol: "LCID", description: "EV stock", price: "$16.63"))
-        stocks.append(WatchlistStocks(stockName: "Google", symbol: "GOOG", description: "Tech stock", price: "$2,157.31"))
-        stocks.append(WatchlistStocks(stockName: "Nvidia", symbol: "NVDA", description: "Tech stock", price: "$158.80"))
+    init(){
+        stocks.append(WatchlistProps(stockName: "Apple", symbol: "APPL", description: "Tech stock", price: "$131.56"))
+        stocks.append(WatchlistProps(stockName: "Lucid Motors", symbol: "LCID", description: "EV stock", price: "$16.63"))
+        stocks.append(WatchlistProps(stockName: "Google", symbol: "GOOG", description: "Tech stock", price: "$2,157.31"))
+        stocks.append(WatchlistProps(stockName: "Nvidia", symbol: "NVDA", description: "Tech stock", price: "$158.80"))
     }
-    
-    // Overloaded Initializer (Do we need??)
-    
-    
-    // Deinitializer (destructor)
-
-    
     // Methods
     func addStockWatchlist () -> Bool{ // Return is Bool because it checks if stock is successfuly add (returns true) if failed (return false)
         // dummy return
@@ -53,13 +40,12 @@ class Watchlist: ObservableObject
     }
     
     func rearrangeWatchlist () -> Void{ // Organizes the watchlist however the users wants
-        
+    
     }
 }
 
-struct WatchlistStocks: Identifiable
-{
-    // Properties
+struct WatchlistProps: Identifiable{
+    //Properties
     var id = UUID()
     var stockName: String
     var symbol: String
