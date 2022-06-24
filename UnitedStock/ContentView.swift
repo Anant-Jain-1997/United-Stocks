@@ -7,64 +7,44 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var stock: String = " "
+    @State var searchString: String = ""
+    @StateObject var finder = SearchApi()
     var body: some View {
-        GeometryReader { geometry in
-        VStack{
-            VStack{
-                Text("United Stocks")
-                .font(.custom("Courier New",size: 30))
-                .foregroundColor(Color.white)
-                .padding()
-                .background(Color.black)
-                .cornerRadius(10)
-                HStack(spacing: 0){
-                    Text("Stock Name:")
-                        .frame(width: 100)
-                        .border(Color.clear)
-                    TextField(" Search", text: $stock)
-                        .frame(width: 200)
-                        .border(Color.black)
-                    Spacer()
-                }
+        VStack(alignment: .leading){
+            TextField("Stock", text: $searchString)
+                .modifier(TextEntry())
+            Button(action: {
+                finder.find(searchString)
+            }) {
+                Text("Find Stock")
             }
-        }.frame(height: geometry.size.height/5)
+            .modifier(ButtonDesign())
+            .padding(.bottom,20)
+            Text("Search Results")
+                .font(.largeTitle)
+            Text(finder.firstfound)
+            Text(finder.SecondFound)
+            Text(finder.ThirdFound)
+                .font(.body)
             Spacer()
-            VStack{
-                HStack{
-                    Text("APPLE INC")
-                        .padding()
-                    Text("$178.75")
-                }
-            }.frame(height: geometry.size.height/1)
-                VStack{
-                    HStack{
-                        Spacer()
-                        NavigationLink(destination: StocksInfoLinks()){
-                            Text("APPLE INC")
-                        }
-                }
-                Spacer()
-            }.frame(height: geometry.size.height/3)
-        }
+        }.padding()
     }
-        }
-
-
-
-struct StocksInfoLinks: View {
-    var body: some View {
-        NavigationView {
-            VStack {
-                List {
-                    Section(header: Text("Stocks")) {
-                        NavigationLink(destination: Text("🍎🍏🍏")) {
-                            Text("Stocks ")
-                        }
-                    }
-                }
-            }
-        }
+}
+struct TextEntry: ViewModifier{
+    func body(content: Content) -> some View{
+        content
+            .padding(10)
+            .border(Color.black)
+            .background(Color.white)
+    }
+}
+struct ButtonDesign: ViewModifier{
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .background(Color.black)
+            .foregroundColor(Color.white)
+            .cornerRadius(10)
     }
 }
 
