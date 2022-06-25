@@ -7,6 +7,16 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct WatchlistProps: Identifiable{
+    //Properties
+    var id = UUID()
+    var stockName: String
+    var symbol: String
+    var description: String
+    var price: String
+}
 
 class Watchlist: ObservableObject{
     @Published var stocks: [WatchlistProps] = []
@@ -18,38 +28,29 @@ class Watchlist: ObservableObject{
         stocks.append(WatchlistProps(stockName: "Google", symbol: "GOOG", description: "Tech stock", price: "$2,157.31"))
         stocks.append(WatchlistProps(stockName: "Nvidia", symbol: "NVDA", description: "Tech stock", price: "$158.80"))
     }
+    
     // Methods
-    func addStockWatchlist () -> Bool{ // Return is Bool because it checks if stock is successfuly add (returns true) if failed (return false)
-        // dummy return
-        return true
-    }
-        
-    func removeStockWatchlist () -> Void{ // Removes the stock from the watchlist
-        // use the .odDelete() method
+    func addStock(){
+        stocks.append(WatchlistProps(stockName: "Boeing", symbol: "BA", description: "Aerospace company", price: "$141.53"))
     }
     
-    func createNewWatchlist () -> Void{ // Create more than one wathchlist
-        
+    func deleteStock(index: IndexSet){ // Removes the stock from the watchlist
+        stocks.remove(atOffsets: index)
     }
     
-    func deleteWatchlist () -> Void{ // Deletes a specific watchlist
+    func createNewWatchlist(){ // Create more than one wathchlist
         
     }
     
-    func filterWatchlist () -> Void{ // Filters the watchlist by low/high price
+    func deleteWatchlist(){ // Deletes a specific watchlist
         
     }
     
-    func rearrangeWatchlist () -> Void{ // Organizes the watchlist however the users wants
-    
+    func filterWatchlist(){ // Filters the watchlist by low/high price
+        
     }
-}
-
-struct WatchlistProps: Identifiable{
-    //Properties
-    var id = UUID()
-    var stockName: String
-    var symbol: String
-    var description: String
-    var price: String
+    
+    func moveStock(offset: IndexSet, index: Int){ // Organizes the watchlist however the users wants
+        stocks.move(fromOffsets: offset, toOffset: index)
+        }
 }

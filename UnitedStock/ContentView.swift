@@ -9,14 +9,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var stockManager: Watchlist
+    var watch = Watchlist()
     var body: some View {
-        WatchlistView()//.environmentObject(WatchlistView)
+        WatchlistView().environmentObject(Watchlist())
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-            .preferredColorScheme(.dark)
+        ContentView(stockManager: Watchlist())
     }
 }

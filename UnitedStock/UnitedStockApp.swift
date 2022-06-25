@@ -12,7 +12,7 @@ import SwiftUI
 struct UnitedStockApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(stockManager: Watchlist())
         }
     }
 }
