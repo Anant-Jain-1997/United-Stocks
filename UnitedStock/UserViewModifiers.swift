@@ -20,7 +20,7 @@ struct UserTitlesMod: ViewModifier {
     func body(content: Content) -> some View {
         content
             .foregroundColor(.red)
-            .font(.custom("Arial", size: 30))
+            .font(.custom("Futura Bold", size: 30))
     }
 }
 
@@ -48,6 +48,35 @@ struct UserInfoTextMod: ViewModifier {
     func body(content: Content) -> some View {
         content
             .foregroundColor(.black)
-            .font(.custom("Futura", size: 18))
+            .font(.custom("Courier", size: 18))
     }
 }
+
+struct UserSignInMod: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .background(.blue)
+            .foregroundColor(.white)
+            .font(.custom("Courier", size: 18))
+    }
+}
+
+struct UserTextFieldMod: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .background(.white)
+            .foregroundColor(.black)
+            .font(.custom("Courier", size: 18))
+    }
+}
+
+struct WarningTextMod: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .foregroundColor(.red)
+            .font(.custom("Courier", size: 18))
+    }
+}
+
