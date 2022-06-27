@@ -87,8 +87,6 @@ struct UserPreview: View {
                 NavigationLink(destination: UserSettings(name: $name, username: $username, password: $password, age: $age, favStock: $favStock)) {
                     Text("⚙️Change User Info⚙️").modifier(UserLinkButtonMod())
                     }
-                Text("User Information Preview")
-                
             }.modifier(UserInfoTextMod())
             }
     }
@@ -146,7 +144,6 @@ struct UserSettings: View {
                         }
                     }
                 }
-                Spacer()
             }.modifier(UserInfoTextMod())
         }
     }

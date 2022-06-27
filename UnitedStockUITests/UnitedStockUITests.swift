@@ -2,7 +2,7 @@
 //  UnitedStockUITests.swift
 //  UnitedStockUITests
 //
-//  Created by Irvin on 6/8/22.
+//  Created by csuftitan on 6/8/22.
 //
 
 import XCTest
