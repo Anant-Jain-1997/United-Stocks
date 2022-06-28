@@ -24,18 +24,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-//import SwiftUI
-//
-//struct ContentView: View {
-//    @StateObject var manager = UserManager()
-//    var body: some View {
-//        CreateUser().environmentObject(manager)
-//    }
-//}
-//
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
+                

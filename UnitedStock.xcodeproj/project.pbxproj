@@ -22,6 +22,11 @@
 		7A9B57022855A248002E6B42 /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B57012855A248002E6B42 /* WatchlistView.swift */; };
 		7AE0753F285A5EF30003AB55 /* UserManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE0753E285A5EF30003AB55 /* UserManagement.swift */; };
 		7AE39EA62851452600402D7C /* Watchlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE39EA52851452600402D7C /* Watchlist.swift */; };
+		7A264CA8286B87E30027797E /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A264CA7286B87E30027797E /* Users.swift */; };
+		7A264CAA286B883A0027797E /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A264CA9286B883A0027797E /* Search.swift */; };
+		7A264CAC286B88830027797E /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A264CAB286B88830027797E /* WatchlistView.swift */; };
+		7A264CAE286B88C10027797E /* UserViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A264CAD286B88C10027797E /* UserViews.swift */; };
+		7A264CB0286B89030027797E /* UserViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A264CAF286B89030027797E /* UserViewModifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,11 @@
 		7A9B57012855A248002E6B42 /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
 		7AE0753E285A5EF30003AB55 /* UserManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagement.swift; sourceTree = "<group>"; };
 		7AE39EA52851452600402D7C /* Watchlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watchlist.swift; sourceTree = "<group>"; };
+		7A264CA7286B87E30027797E /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		7A264CA9286B883A0027797E /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		7A264CAB286B88830027797E /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
+		7A264CAD286B88C10027797E /* UserViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViews.swift; sourceTree = "<group>"; };
+		7A264CAF286B89030027797E /* UserViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,15 +123,18 @@
 			isa = PBXGroup;
 			children = (
 				7A18127728511E430064B9F7 /* UnitedStockApp.swift */,
+				7A264CAF286B89030027797E /* UserViewModifiers.swift */,
+				7A264CAD286B88C10027797E /* UserViews.swift */,
 				7A18127928511E430064B9F7 /* ContentView.swift */,
-				7A95F5AD28613FE40083387F /* UserViewModifiers.swift */,
-				7A95F5A92861370E0083387F /* UserViews.swift */,
 				7A18127B28511E450064B9F7 /* Assets.xcassets */,
 				7AE39EA52851452600402D7C /* Watchlist.swift */,
 				7A9B57012855A248002E6B42 /* WatchlistView.swift */,
 				7A60AF11286B83FA002B5A99 /* SearchView.swift */,
 				7A60AF13286B840D002B5A99 /* NewsView.swift */,
 				7AE0753E285A5EF30003AB55 /* UserManagement.swift */,
+				7A264CA7286B87E30027797E /* Users.swift */,
+				7A264CA9286B883A0027797E /* Search.swift */,
+				7A264CAB286B88830027797E /* WatchlistView.swift */,
 			);
 			path = UnitedStock;
 			sourceTree = "<group>";
@@ -274,15 +287,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A9B57022855A248002E6B42 /* WatchlistView.swift in Sources */,
 				7A18127A28511E430064B9F7 /* ContentView.swift in Sources */,
 				7A95F5AA2861370E0083387F /* UserViews.swift in Sources */,
 				7A60AF14286B840D002B5A99 /* NewsView.swift in Sources */,
 				7A95F5AE28613FE40083387F /* UserViewModifiers.swift in Sources */,
 				7A60AF12286B83FA002B5A99 /* SearchView.swift in Sources */,
 				7AE0753F285A5EF30003AB55 /* UserManagement.swift in Sources */,
+				7A264CA8286B87E30027797E /* Users.swift in Sources */,
+				7A264CAC286B88830027797E /* WatchlistView.swift in Sources */,
+				7A264CAA286B883A0027797E /* Search.swift in Sources */,
 				7A18127828511E430064B9F7 /* UnitedStockApp.swift in Sources */,
-				7AE39EA62851452600402D7C /* Watchlist.swift in Sources */,
+				7A264CB0286B89030027797E /* UserViewModifiers.swift in Sources */,
+				7A264CAE286B88C10027797E /* UserViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
