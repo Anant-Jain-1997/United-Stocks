@@ -9,13 +9,13 @@
 import SwiftUI
 
 struct WatchlistView: View {
-    @EnvironmentObject var stockManager: Watchlist
+    @EnvironmentObject var manager: Watchlist
     @State var searchStock = ""
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(stockManager.stocks) {
+                    ForEach(manager.stocks) {
                         WatchlistStocks in
                         HStack {
                             NavigationLink(destination: Text("\(WatchlistStocks.stockName) view \n Description: \(WatchlistStocks.description)").multilineTextAlignment(.center)) {
@@ -25,8 +25,8 @@ struct WatchlistView: View {
                                     .font(.headline).foregroundColor(Color.green)
                             }
                         }
-                    }.onDelete(perform: stockManager.deleteStock)
-                        .onMove(perform: stockManager.moveStock)
+                    }.onDelete(perform: manager.deleteStock)
+                        .onMove(perform: manager.moveStock)
                 }
             }.navigationBarTitle(Text("Watchlist"))
                 .navigationBarItems(leading: EditButton())
@@ -41,7 +41,7 @@ struct WatchlistView: View {
 
     struct AddStocksView: View {
         @SceneStorage("Stock Name") var addStockName: String = ""
-        @EnvironmentObject var stockManager: Watchlist
+        @EnvironmentObject var manager: Watchlist
         var body: some View {
             NavigationView {
                 VStack {
@@ -64,7 +64,7 @@ struct WatchlistView: View {
                     }
                     .padding(.bottom, 20)
                     Button(action: {
-                        stockManager.stocks.append(StockProps(stockName: addStockName, symbol: "", description: "", price: ""))
+                        manager.stocks.append(StockProps(stockName: addStockName, symbol: "", description: "", price: ""))
                         addStockName = ""
                     }) {
                         Text("Submit")
