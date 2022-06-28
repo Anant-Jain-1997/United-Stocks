@@ -4,6 +4,7 @@
 //
 //  Created by csuftitan on 6/8/22.
 //
+//
 
 import SwiftUI
 
@@ -11,7 +12,9 @@ import SwiftUI
 struct UnitedStockApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(stockManager: Watchlist())
         }
     }
 }
+
+
