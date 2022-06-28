@@ -12,14 +12,14 @@ struct APIResults: Codable {
     var Symbol: String
     var Name: String
     var AnalystTargetPrice: String
-    
-}
+    }
 
 
 class SearchApi: ObservableObject {
     @Published var firstfound = ""
     @Published var SecondFound = ""
     @Published var ThirdFound = ""
+    
     private var APIToken = "BDMFZ8CQ1SLEFGKE"
     
     func find(_ searchTerm: String){
@@ -54,3 +54,6 @@ class SearchApi: ObservableObject {
         }
     }
 }
+         //
+
+
