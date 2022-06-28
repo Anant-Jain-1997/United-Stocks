@@ -6,7 +6,6 @@
 //
 //
 import SwiftUI
-
 struct ContentView: View {
     //@StateObject var manager = Watchlist()
     var body: some View {
