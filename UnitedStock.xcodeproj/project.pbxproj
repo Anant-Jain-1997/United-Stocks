@@ -15,11 +15,13 @@
 		7A18129528511E450064B9F7 /* UnitedStockUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18129428511E450064B9F7 /* UnitedStockUITestsLaunchTests.swift */; };
 		7A1812A228511E790064B9F7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7A1812A128511E790064B9F7 /* .gitignore */; };
 		7A1812A428511EB90064B9F7 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 7A1812A328511EB90064B9F7 /* .gitattributes */; };
-		7A9B57022855A248002E6B42 /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B57012855A248002E6B42 /* WatchlistView.swift */; };
-		7AE39EA62851452600402D7C /* Watchlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE39EA52851452600402D7C /* Watchlist.swift */; };
+		7A60AF12286B83FA002B5A99 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60AF11286B83FA002B5A99 /* SearchView.swift */; };
+		7A60AF14286B840D002B5A99 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60AF13286B840D002B5A99 /* NewsView.swift */; };
 		7A95F5AA2861370E0083387F /* UserViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A95F5A92861370E0083387F /* UserViews.swift */; };
 		7A95F5AE28613FE40083387F /* UserViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A95F5AD28613FE40083387F /* UserViewModifiers.swift */; };
+		7A9B57022855A248002E6B42 /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B57012855A248002E6B42 /* WatchlistView.swift */; };
 		7AE0753F285A5EF30003AB55 /* UserManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE0753E285A5EF30003AB55 /* UserManagement.swift */; };
+		7AE39EA62851452600402D7C /* Watchlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE39EA52851452600402D7C /* Watchlist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,11 +53,13 @@
 		7A18129428511E450064B9F7 /* UnitedStockUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitedStockUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7A1812A128511E790064B9F7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7A1812A328511EB90064B9F7 /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
-		7A9B57012855A248002E6B42 /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
-		7AE39EA52851452600402D7C /* Watchlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watchlist.swift; sourceTree = "<group>"; };
+		7A60AF11286B83FA002B5A99 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		7A60AF13286B840D002B5A99 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		7A95F5A92861370E0083387F /* UserViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViews.swift; sourceTree = "<group>"; };
 		7A95F5AD28613FE40083387F /* UserViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModifiers.swift; sourceTree = "<group>"; };
+		7A9B57012855A248002E6B42 /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
 		7AE0753E285A5EF30003AB55 /* UserManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagement.swift; sourceTree = "<group>"; };
+		7AE39EA52851452600402D7C /* Watchlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watchlist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,9 +117,10 @@
 				7A95F5AD28613FE40083387F /* UserViewModifiers.swift */,
 				7A95F5A92861370E0083387F /* UserViews.swift */,
 				7A18127B28511E450064B9F7 /* Assets.xcassets */,
-				7A18127D28511E450064B9F7 /* Preview Content */,
 				7AE39EA52851452600402D7C /* Watchlist.swift */,
 				7A9B57012855A248002E6B42 /* WatchlistView.swift */,
+				7A60AF11286B83FA002B5A99 /* SearchView.swift */,
+				7A60AF13286B840D002B5A99 /* NewsView.swift */,
 				7AE0753E285A5EF30003AB55 /* UserManagement.swift */,
 			);
 			path = UnitedStock;
@@ -272,7 +277,9 @@
 				7A9B57022855A248002E6B42 /* WatchlistView.swift in Sources */,
 				7A18127A28511E430064B9F7 /* ContentView.swift in Sources */,
 				7A95F5AA2861370E0083387F /* UserViews.swift in Sources */,
+				7A60AF14286B840D002B5A99 /* NewsView.swift in Sources */,
 				7A95F5AE28613FE40083387F /* UserViewModifiers.swift in Sources */,
+				7A60AF12286B83FA002B5A99 /* SearchView.swift in Sources */,
 				7AE0753F285A5EF30003AB55 /* UserManagement.swift in Sources */,
 				7A18127828511E430064B9F7 /* UnitedStockApp.swift in Sources */,
 				7AE39EA62851452600402D7C /* Watchlist.swift in Sources */,
@@ -434,7 +441,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UnitedStock/Preview Content\"";
-				DEVELOPMENT_TEAM = WTGB9K4FA9;
 				DEVELOPMENT_TEAM = 46PWQ7ZXLC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -465,7 +471,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UnitedStock/Preview Content\"";
-				DEVELOPMENT_TEAM = WTGB9K4FA9;
 				DEVELOPMENT_TEAM = 46PWQ7ZXLC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
