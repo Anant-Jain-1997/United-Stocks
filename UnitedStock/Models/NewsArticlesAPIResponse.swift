@@ -8,8 +8,16 @@
 import Foundation
 import SwiftUI
 
+struct newsArticlesAPIResponse: Decodable {
+    let status: String
+    let totalResults: Int?
+    let articles: [newsArticle]?
+    
+    let code: String?
+    let message: String?
 
-struct viewNews: Identifiable {
+}
+/*struct viewNews: Identifiable {
     
     var uuid_ID: UUID {return UUID ()}
     
@@ -33,9 +41,9 @@ class retrieveData: ObservableObject{
     
     init(){
         
-        let source = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=API_KEY"
+       let source = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=API_KEY"
         
-        let url = URL(String: url )
+       let url = URL(String: url)
     }
     
-}
+}*/
