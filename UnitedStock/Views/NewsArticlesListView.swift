@@ -12,6 +12,7 @@ struct NewsArticlesListView: View {
     let article: [newsArticle]
     @State private  var selectedNewsArticle: newsArticle?
     
+    
     var body: some View {
         List {
             ForEach(article) { article in
@@ -30,9 +31,13 @@ struct NewsArticlesListView: View {
 }
 
 struct NewsArticlesListView_Previews: PreviewProvider {
+    
+    @StateObject static var newsArticleSave = savedNewsArticles()
+    
     static var previews: some View {
         NavigationView {
-        NewsArticlesListView(article: newsArticle.viewData)
+            NewsArticlesListView(article: newsArticle.viewData)
+                .environmentObject(newsArticleSave)
         }
     }
 }

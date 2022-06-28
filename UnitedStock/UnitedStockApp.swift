@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct UnitedStockApp: App {
+    
+    @StateObject var newsArticleSave = savedNewsArticles()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(newsArticleSave)
         }
     }
 }

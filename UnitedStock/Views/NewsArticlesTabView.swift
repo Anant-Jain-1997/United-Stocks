@@ -32,7 +32,11 @@ struct NewsArticlesTabView: View {
 }
 
 struct NewsArticlesTabView_Previews: PreviewProvider {
+    
+    @StateObject static var newsArticleSave = savedNewsArticles()
+    
     static var previews: some View {
         NewsArticlesTabView(newsArticleVM: NewsViewModel(articles: newsArticle.viewData))
+            .environmentObject(newsArticleSave)
     }
 }

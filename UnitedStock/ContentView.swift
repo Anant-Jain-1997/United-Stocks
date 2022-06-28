@@ -14,6 +14,10 @@ struct ContentView: View {
                 .tabItem {
                     Label("News", systemImage: "newspaper.circle")
                 }
+            SavedNewsTabView()
+                .tabItem{
+                    Label("Saved News", systemImage: "square.and.arrow.down.on.square")
+                }
         }
         
         //NewsArticlesListView(article: newsArticle.viewData)

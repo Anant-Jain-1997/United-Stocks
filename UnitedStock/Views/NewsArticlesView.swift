@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct NewsArticlesView: View {
+    
+    @EnvironmentObject var newsArticleSave: savedNewsArticles
+    
     let article: newsArticle
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -37,7 +40,7 @@ struct NewsArticlesView: View {
                             Image(systemName: "photo")
                             Spacer()
                         }
-                    
+                        
                     @unknown default:
                         fatalError()
                     }
@@ -52,8 +55,10 @@ struct NewsArticlesView: View {
                     .foregroundColor(.secondary)
                 Spacer()
                 
-                Button {} label: {
-                    Image(systemName: "square.and.arrow.down.fill")
+                Button {
+                    toggleSaved(for: article)
+                } label: {
+                    Image(systemName: newsArticleSave.saving(for: article) ? "square.and.arrow.downsquare.and.arrow.down.fill" : "square.and.arrow.down")
                 }
                 .buttonStyle(.bordered)
                 .accentColor( .orange)
@@ -61,14 +66,27 @@ struct NewsArticlesView: View {
         }
         .padding(.all)
     }
+    private func toggleSaved(for article: newsArticle){
+        if newsArticleSave.saving(for: article){
+            newsArticleSave.removeSavedNews(for: article)
+        } else {
+            newsArticleSave.saved(for: article)
+        }
+    }
 }
 
 struct NewsArticlesView_Previews: PreviewProvider {
+    
+    @StateObject static var newsArticleSave = savedNewsArticles()
+    
     static var previews: some View {
-        List {
-            NewsArticlesView(article: .viewData[0])
-                .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+        NavigationView{
+            List {
+                NewsArticlesView(article: .viewData[0])
+                    .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+            }
+            .listStyle(.plain)
         }
-        .listStyle(.plain)
+        .environmentObject(newsArticleSave)
     }
 }
