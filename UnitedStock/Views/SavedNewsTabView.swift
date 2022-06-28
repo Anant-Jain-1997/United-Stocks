@@ -23,7 +23,7 @@ struct SavedNewsTabView: View {
 
 struct SavedNewsTabView_Previews: PreviewProvider {
     
-    @StateObject static var newsArticleSave = savedNewsArticles()
+    @StateObject static var newsArticleSave = savedNewsArticles.shared
     
     static var previews: some View {
         SavedNewsTabView()

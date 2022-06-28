@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct UnitedStockApp: App {
     
-    @StateObject var newsArticleSave = savedNewsArticles()
+    @StateObject var newsArticleSave = savedNewsArticles.shared
     
     var body: some Scene {
         WindowGroup {

@@ -33,7 +33,7 @@ struct NewsArticlesTabView: View {
 
 struct NewsArticlesTabView_Previews: PreviewProvider {
     
-    @StateObject static var newsArticleSave = savedNewsArticles()
+    @StateObject static var newsArticleSave = savedNewsArticles.shared
     
     static var previews: some View {
         NewsArticlesTabView(newsArticleVM: NewsViewModel(articles: newsArticle.viewData))

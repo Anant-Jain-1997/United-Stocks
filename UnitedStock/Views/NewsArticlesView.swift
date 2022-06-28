@@ -58,7 +58,7 @@ struct NewsArticlesView: View {
                 Button {
                     toggleSaved(for: article)
                 } label: {
-                    Image(systemName: newsArticleSave.saving(for: article) ? "square.and.arrow.downsquare.and.arrow.down.fill" : "square.and.arrow.down")
+                    Image(systemName: newsArticleSave.saving(for: article) ? "square.and.arrow.down.fill" : "square.and.arrow.down")
                 }
                 .buttonStyle(.bordered)
                 .accentColor( .orange)
@@ -77,7 +77,7 @@ struct NewsArticlesView: View {
 
 struct NewsArticlesView_Previews: PreviewProvider {
     
-    @StateObject static var newsArticleSave = savedNewsArticles()
+    @StateObject static var newsArticleSave = savedNewsArticles.shared
     
     static var previews: some View {
         NavigationView{

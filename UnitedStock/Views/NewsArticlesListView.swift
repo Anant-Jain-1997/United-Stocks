@@ -32,7 +32,7 @@ struct NewsArticlesListView: View {
 
 struct NewsArticlesListView_Previews: PreviewProvider {
     
-    @StateObject static var newsArticleSave = savedNewsArticles()
+    @StateObject static var newsArticleSave = savedNewsArticles.shared
     
     static var previews: some View {
         NavigationView {
