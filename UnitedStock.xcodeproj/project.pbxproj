@@ -15,9 +15,6 @@
 		7A18129528511E450064B9F7 /* UnitedStockUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18129428511E450064B9F7 /* UnitedStockUITestsLaunchTests.swift */; };
 		7A1812A228511E790064B9F7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7A1812A128511E790064B9F7 /* .gitignore */; };
 		7A1812A428511EB90064B9F7 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 7A1812A328511EB90064B9F7 /* .gitattributes */; };
-		7A95F5AA2861370E0083387F /* UserViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A95F5A92861370E0083387F /* UserViews.swift */; };
-		7A95F5AE28613FE40083387F /* UserViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A95F5AD28613FE40083387F /* UserViewModifiers.swift */; };
-		7AE0753F285A5EF30003AB55 /* UserManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE0753E285A5EF30003AB55 /* UserManagement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7A18127428511E430064B9F7 /* UnitedStock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitedStock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A18127428511E430064B9F7 /* UnitedStocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitedStocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A18127728511E430064B9F7 /* UnitedStockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitedStockApp.swift; sourceTree = "<group>"; };
 		7A18127928511E430064B9F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7A18127B28511E450064B9F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,9 +46,6 @@
 		7A18129428511E450064B9F7 /* UnitedStockUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitedStockUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7A1812A128511E790064B9F7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7A1812A328511EB90064B9F7 /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
-		7A95F5A92861370E0083387F /* UserViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViews.swift; sourceTree = "<group>"; };
-		7A95F5AD28613FE40083387F /* UserViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModifiers.swift; sourceTree = "<group>"; };
-		7AE0753E285A5EF30003AB55 /* UserManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +88,7 @@
 		7A18127528511E430064B9F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7A18127428511E430064B9F7 /* UnitedStock.app */,
+				7A18127428511E430064B9F7 /* UnitedStocks.app */,
 				7A18128428511E450064B9F7 /* UnitedStockTests.xctest */,
 				7A18128E28511E450064B9F7 /* UnitedStockUITests.xctest */,
 			);
@@ -109,7 +103,6 @@
 				7A95F5AD28613FE40083387F /* UserViewModifiers.swift */,
 				7A95F5A92861370E0083387F /* UserViews.swift */,
 				7A18127B28511E450064B9F7 /* Assets.xcassets */,
-				7AE0753E285A5EF30003AB55 /* UserManagement.swift */,
 			);
 			path = UnitedStock;
 			sourceTree = "<group>";
@@ -148,7 +141,7 @@
 			);
 			name = UnitedStock;
 			productName = UnitedStock;
-			productReference = 7A18127428511E430064B9F7 /* UnitedStock.app */;
+			productReference = 7A18127428511E430064B9F7 /* UnitedStocks.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7A18128328511E450064B9F7 /* UnitedStockTests */ = {
@@ -262,11 +255,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A9B57022855A248002E6B42 /* WatchlistView.swift in Sources */,
 				7A18127A28511E430064B9F7 /* ContentView.swift in Sources */,
 				7A95F5AA2861370E0083387F /* UserViews.swift in Sources */,
 				7A95F5AE28613FE40083387F /* UserViewModifiers.swift in Sources */,
 				7AE0753F285A5EF30003AB55 /* UserManagement.swift in Sources */,
 				7A18127828511E430064B9F7 /* UnitedStockApp.swift in Sources */,
+				7AE39EA62851452600402D7C /* Watchlist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +420,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UnitedStock/Preview Content\"";
-				DEVELOPMENT_TEAM = 46PWQ7ZXLC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -440,10 +434,10 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.UnitedStock.UnitedStock;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = UnitedStocks;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -455,7 +449,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UnitedStock/Preview Content\"";
-				DEVELOPMENT_TEAM = 46PWQ7ZXLC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -470,10 +463,10 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.UnitedStock.UnitedStock;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = UnitedStocks;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
