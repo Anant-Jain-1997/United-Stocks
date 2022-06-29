@@ -4,7 +4,6 @@
 //
 //  Created by Irvin on 6/20/22.
 //
-
 import SwiftUI
 
 struct UserViews: View {
