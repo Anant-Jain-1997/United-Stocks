@@ -10,7 +10,6 @@
 		7A18127828511E430064B9F7 /* UnitedStockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18127728511E430064B9F7 /* UnitedStockApp.swift */; };
 		7A18127A28511E430064B9F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18127928511E430064B9F7 /* ContentView.swift */; };
 		7A18127C28511E450064B9F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A18127B28511E450064B9F7 /* Assets.xcassets */; };
-		7A18127F28511E450064B9F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A18127E28511E450064B9F7 /* Preview Assets.xcassets */; };
 		7A18128928511E450064B9F7 /* UnitedStockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18128828511E450064B9F7 /* UnitedStockTests.swift */; };
 		7A18129328511E450064B9F7 /* UnitedStockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18129228511E450064B9F7 /* UnitedStockUITests.swift */; };
 		7A18129528511E450064B9F7 /* UnitedStockUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18129428511E450064B9F7 /* UnitedStockUITestsLaunchTests.swift */; };
@@ -30,6 +29,13 @@
 		7A2CC419286AF3160004DB7B /* SavedNewsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CC418286AF3160004DB7B /* SavedNewsTabView.swift */; };
 		7A2CC41B286B014B0004DB7B /* DataPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CC41A286B014B0004DB7B /* DataPersistence.swift */; };
 		7A67274F2851290E00E0E0E7 /* NewsArticlesAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A67274E2851290E00E0E0E7 /* NewsArticlesAPIResponse.swift */; };
+		7A264CAA286B883A0027797E /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A264CA9286B883A0027797E /* Search.swift */; };
+		7A264CAE286B88C10027797E /* UserViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A264CAD286B88C10027797E /* UserViews.swift */; };
+		7A264CB0286B89030027797E /* UserViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A264CAF286B89030027797E /* UserViewModifiers.swift */; };
+		7A7A5758286BC1E700461322 /* SearchViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A5757286BC1E700461322 /* SearchViews.swift */; };
+		7A7A575A286BC89E00461322 /* Watchlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A5759286BC89E00461322 /* Watchlist.swift */; };
+		7A7A575C286BC8C700461322 /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A575B286BC8C700461322 /* WatchlistView.swift */; };
+		7AE0753F285A5EF30003AB55 /* UserManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE0753E285A5EF30003AB55 /* UserManagement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,11 +56,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7A18127428511E430064B9F7 /* UnitedStock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitedStock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A18127428511E430064B9F7 /* UnitedStocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitedStocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A18127728511E430064B9F7 /* UnitedStockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitedStockApp.swift; sourceTree = "<group>"; };
 		7A18127928511E430064B9F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7A18127B28511E450064B9F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7A18127E28511E450064B9F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7A18128428511E450064B9F7 /* UnitedStockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitedStockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A18128828511E450064B9F7 /* UnitedStockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitedStockTests.swift; sourceTree = "<group>"; };
 		7A18128E28511E450064B9F7 /* UnitedStockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitedStockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +81,13 @@
 		7A2CC418286AF3160004DB7B /* SavedNewsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedNewsTabView.swift; sourceTree = "<group>"; };
 		7A2CC41A286B014B0004DB7B /* DataPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistence.swift; sourceTree = "<group>"; };
 		7A67274E2851290E00E0E0E7 /* NewsArticlesAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticlesAPIResponse.swift; sourceTree = "<group>"; };
+		7A264CA9286B883A0027797E /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		7A264CAD286B88C10027797E /* UserViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViews.swift; sourceTree = "<group>"; };
+		7A264CAF286B89030027797E /* UserViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModifiers.swift; sourceTree = "<group>"; };
+		7A7A5757286BC1E700461322 /* SearchViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViews.swift; path = "Preview Content/SearchViews.swift"; sourceTree = "<group>"; };
+		7A7A5759286BC89E00461322 /* Watchlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watchlist.swift; sourceTree = "<group>"; };
+		7A7A575B286BC8C700461322 /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
+		7AE0753E285A5EF30003AB55 /* UserManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +130,7 @@
 		7A18127528511E430064B9F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7A18127428511E430064B9F7 /* UnitedStock.app */,
+				7A18127428511E430064B9F7 /* UnitedStocks.app */,
 				7A18128428511E450064B9F7 /* UnitedStockTests.xctest */,
 				7A18128E28511E450064B9F7 /* UnitedStockUITests.xctest */,
 			);
@@ -130,23 +142,21 @@
 			children = (
 				7A2CC40C286A2C470004DB7B /* Models */,
 				7A2CC409286A27870004DB7B /* API's */,
+				7A7A5757286BC1E700461322 /* SearchViews.swift */,
 				7A18127728511E430064B9F7 /* UnitedStockApp.swift */,
+				7A264CAF286B89030027797E /* UserViewModifiers.swift */,
+				7A264CAD286B88C10027797E /* UserViews.swift */,
 				7A18127928511E430064B9F7 /* ContentView.swift */,
 				7A2CC3FB286806C80004DB7B /* TopNewsView.swift */,
 				7A2CC3FF286819910004DB7B /* newsArticles.json */,
 				7A2CC4012869151E0004DB7B /* Views */,
 				7A18127B28511E450064B9F7 /* Assets.xcassets */,
-				7A18127D28511E450064B9F7 /* Preview Content */,
+				7AE0753E285A5EF30003AB55 /* UserManagement.swift */,
+				7A264CA9286B883A0027797E /* Search.swift */,
+				7A7A5759286BC89E00461322 /* Watchlist.swift */,
+				7A7A575B286BC8C700461322 /* WatchlistView.swift */,
 			);
 			path = UnitedStock;
-			sourceTree = "<group>";
-		};
-		7A18127D28511E450064B9F7 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				7A18127E28511E450064B9F7 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		7A18128728511E450064B9F7 /* UnitedStockTests */ = {
@@ -224,7 +234,7 @@
 			);
 			name = UnitedStock;
 			productName = UnitedStock;
-			productReference = 7A18127428511E430064B9F7 /* UnitedStock.app */;
+			productReference = 7A18127428511E430064B9F7 /* UnitedStocks.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7A18128328511E450064B9F7 /* UnitedStockTests */ = {
@@ -355,6 +365,14 @@
 				7A2CC3FE28680CDA0004DB7B /* NewsArticle.swift in Sources */,
 				7A2CC3FC286806C80004DB7B /* TopNewsView.swift in Sources */,
 				7A2CC419286AF3160004DB7B /* SavedNewsTabView.swift in Sources */,
+				7AE0753F285A5EF30003AB55 /* UserManagement.swift in Sources */,
+				7A264CAA286B883A0027797E /* Search.swift in Sources */,
+				7A18127828511E430064B9F7 /* UnitedStockApp.swift in Sources */,
+				7A7A5758286BC1E700461322 /* SearchViews.swift in Sources */,
+				7A7A575A286BC89E00461322 /* Watchlist.swift in Sources */,
+				7A264CB0286B89030027797E /* UserViewModifiers.swift in Sources */,
+				7A7A575C286BC8C700461322 /* WatchlistView.swift in Sources */,
+				7A264CAE286B88C10027797E /* UserViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +531,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UnitedStock/Preview Content\"";
+				DEVELOPMENT_TEAM = 46PWQ7ZXLC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -520,16 +539,17 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.UnitedStock.UnitedStock;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = UnitedStocks;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -541,6 +561,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UnitedStock/Preview Content\"";
+				DEVELOPMENT_TEAM = 46PWQ7ZXLC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -548,16 +569,17 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.UnitedStock.UnitedStock;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = UnitedStocks;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
