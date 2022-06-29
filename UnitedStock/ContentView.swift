@@ -10,17 +10,18 @@ struct ContentView: View {
     @StateObject var manager = UserManager()
     var body: some View {
         UserSigningIn().environmentObject(manager)
+        NavigationView{
+            NavigationLink(destination: NewsFeatureView()) {
+                Text("News Feature")
+            }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
        ContentView()
-        NavigationView{
-            NavigationLink(destination: NewsFeatureView()) {
-                Text("News Feature")
-            }
-        }
+
         /*  AllNewsView()
             .previewLayout(.sizeThatFits)
         SavedNewsView()
