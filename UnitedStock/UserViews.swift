@@ -288,7 +288,7 @@ struct UserSigningIn: View {
                     .background(Color.blue)
                     .cornerRadius(10)
                     
-                    NavigationLink(destination: UserProfile(name: $name, username: $username, password: $password, age: $age, favStock: $favStock), isActive: $showingSignInScreen) {
+                    NavigationLink(destination: HomeView(name: $name, username: $username, password: $password, age: $age, favStock: $favStock), isActive: $showingSignInScreen) {
                         EmptyView()
                     }
                 }
