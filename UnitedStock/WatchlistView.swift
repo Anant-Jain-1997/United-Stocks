@@ -25,8 +25,8 @@ struct WatchlistView: View {
                     ForEach(manager.stocks) {
                         WatchlistStocks in
                         HStack {
-                            NavigationLink(destination: Text("\(WatchlistStocks.stockName) view \n Description: \(WatchlistStocks.description)").multilineTextAlignment(.center)) {
-                                Text(WatchlistStocks.stockName)
+                            NavigationLink(destination: Text("\(WatchlistStocks.name)").multilineTextAlignment(.center)) {
+                                Text(WatchlistStocks.name)
                                 Spacer()
                                 Text(WatchlistStocks.price)
                                     .font(.headline).foregroundColor(Color.green)

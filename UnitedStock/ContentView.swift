@@ -51,26 +51,31 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
 
-    }
-}
-/* struct AllNewsView: View {
-    var body: some View {
-        VStack {
-            Text("Tab Content 2")
-                .font(.title2)
-                .fontWeight(.bold)
-                .navigationTitle("NEWS")
-        }
+        /*  AllNewsView()
+             .previewLayout(.sizeThatFits)
+         SavedNewsView()
+             .previewLayout(.sizeThatFits) */
     }
 }
 
-struct SavedNewsView: View {
-    var body: some View {
-        VStack {
-            Text("Tab Content 3")
-                .font(.title2)
-                .fontWeight(.bold)
-                .navigationTitle("SAVED NEWS")
-        }
-    }
-} */
+/* struct AllNewsView: View {
+     var body: some View {
+         VStack {
+             Text("Tab Content 2")
+                 .font(.title2)
+                 .fontWeight(.bold)
+                 .navigationTitle("NEWS")
+         }
+     }
+ }
+
+ struct SavedNewsView: View {
+     var body: some View {
+         VStack {
+             Text("Tab Content 3")
+                 .font(.title2)
+                 .fontWeight(.bold)
+                 .navigationTitle("SAVED NEWS")
+         }
+     }
+ } */
