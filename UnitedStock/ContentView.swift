@@ -16,7 +16,11 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
        ContentView()
-
+        NavigationView{
+            NavigationLink(destination: NewsFeatureView()) {
+                Text("News Feature")
+            }
+        }
         /*  AllNewsView()
             .previewLayout(.sizeThatFits)
         SavedNewsView()
