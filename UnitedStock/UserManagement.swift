@@ -9,7 +9,7 @@ import Foundation
 
 class User : ObservableObject, Identifiable {
     //initializer sets all member variables
-    init(name: String,  username: String, password: String, age: Int, favStock: String) {
+    init(name: String,  username: String, password: String, age: String, favStock: String) {
         self.name = name
         self.age = age
         self.password = password
@@ -21,7 +21,7 @@ class User : ObservableObject, Identifiable {
     @Published var name: String
     @Published var username: String
     @Published var password: String
-    @Published var age: Int
+    @Published var age: String
     @Published var favStock: String
 }
 
@@ -40,24 +40,6 @@ class UserManager: ObservableObject {
         return list
     }
     
-    func findUser(_ username: String, _ password: String) -> User {
-        
-        var foundUser: User = User(name: "", username: "", password: "", age: 0, favStock: "")
-        
-        if !users.isEmpty {
-            for user in users {
-                if username == user.username && password == user.password {
-                    foundUser.name = user.name
-                    foundUser.username = user.username
-                    foundUser.password = user.password
-                    foundUser.age = user.age
-                    foundUser.favStock = user.favStock
-                }
-            }
-        }
-        return foundUser
-        }
-    
     func applyUser(_ user: User) -> Void {
         let newCopy = User(name: user.name, username: user.username, password: user.password, age: user.age, favStock: user.favStock)
         users.append(newCopy)
@@ -67,7 +49,4 @@ class UserManager: ObservableObject {
         
     }
 }
-
-
-
 
