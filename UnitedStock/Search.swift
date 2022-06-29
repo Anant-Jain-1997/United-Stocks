@@ -12,6 +12,7 @@ struct APIResults: Codable {
     var Symbol: String
     var Name: String
     var AnalystTargetPrice: String
+    var Sector: String
     }
 
 
@@ -19,15 +20,15 @@ class SearchApi: ObservableObject {
     @Published var firstfound = ""
     @Published var SecondFound = ""
     @Published var ThirdFound = ""
-    
+    @Published var Fourthfound = ""
     private var APIToken = "BDMFZ8CQ1SLEFGKE"
     
-    func find(_ searchTerm: String){
-        guard searchTerm != "" else{
+    func find(_ searchString: String){
+        guard searchString != "" else{
             return
         }
     
-        let AlphaVantageURL = "https://www.alphavantage.co/query?function=OVERVIEW&symbol=\(searchTerm)&apikey=\(APIToken)"
+        let AlphaVantageURL = "https://www.alphavantage.co/query?function=OVERVIEW&symbol=\(searchString)&apikey=\(APIToken)"
         if let  urlString = AlphaVantageURL.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed),
            let url  = URL(string: urlString)
         {
@@ -40,6 +41,8 @@ class SearchApi: ObservableObject {
                             self.firstfound = result.Symbol
                             self.SecondFound = result.Name
                             self.ThirdFound = result.AnalystTargetPrice
+                            self.Fourthfound = result.Sector
+                           
                          
                             
                         }else{
@@ -54,6 +57,46 @@ class SearchApi: ObservableObject {
         }
     }
 }
-         //
+
+class SearchHistory: ObservableObject {
+    @Published var searchStrings: [String] = []
+    var maxsearches: Int = 3
+    var fileURL: URL
+    
+    init(){
+        let documentDirectory = FileManager.default.urls(for: .documentDirectory,
+                                                         in: .userDomainMask).first!
+        let archiveURL =
+        documentDirectory.appendingPathComponent("Stocks")
+            .appendingPathExtension("plist")
+        fileURL = URL(string: "\(archiveURL)")!
+        loadHistory()
+    }
+    func addSearchString(_ searchString: String){
+        if searchStrings.count == maxsearches {
+            searchStrings.remove(at: maxsearches - 1)
+        }
+        searchStrings.insert(searchString, at: 0)
+        saveHistory()
+        }
+    func saveHistory(){
+        let propertyListEncoder = PropertyListEncoder()
+        if let encodedVolunteer = try? propertyListEncoder.encode(searchStrings){
+            try? encodedVolunteer.write(to: fileURL,
+                                        options: .noFileProtection)
+        }
+           
+    }
+    func loadHistory(){
+        let propertyListDecoder = PropertyListDecoder()
+        if let retrievedVolunteer = try? Data(contentsOf: fileURL),
+           let decodedVolunteer = try?
+            propertyListDecoder.decode([String].self,
+                                       from: retrievedVolunteer)
+        {
+            searchStrings = decodedVolunteer
+        }
+    }
+}
 
 
