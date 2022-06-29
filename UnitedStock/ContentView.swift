@@ -7,9 +7,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var manager = UserManager()
     var body: some View {
-        CreateUser().environmentObject(manager)
+        TabView {
+            ViewStock()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
+            ViewSearch()
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("Search")
+                }
+            
+        }
     }
 }
 

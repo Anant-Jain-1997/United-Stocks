@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct StockViews: View {
+struct ViewStock: View {
     @StateObject var manager = Watchlist()
+    @StateObject var searchManager = SearchApi()
     var body: some View {
         WatchlistView().environmentObject(manager)
     }
@@ -17,6 +18,7 @@ struct StockViews: View {
 struct WatchlistView: View {
     @EnvironmentObject var manager: Watchlist
     @State var searchStock = ""
+    @State private var SearchView = false
     var body: some View {
         NavigationView {
             VStack {
@@ -24,8 +26,8 @@ struct WatchlistView: View {
                     ForEach(manager.stocks) {
                         WatchlistStocks in
                         HStack {
-                            NavigationLink(destination: Text("\(WatchlistStocks.stockName) view \n Description: \(WatchlistStocks.description)").multilineTextAlignment(.center)) {
-                                Text(WatchlistStocks.stockName)
+                            NavigationLink(destination: Text("\(WatchlistStocks.name)").multilineTextAlignment(.center)) {
+                                Text(WatchlistStocks.name)
                                 Spacer()
                                 Text(WatchlistStocks.price)
                                     .font(.headline).foregroundColor(Color.green)
@@ -35,19 +37,22 @@ struct WatchlistView: View {
                         .onMove(perform: manager.moveStock)
                 }
             }.navigationBarTitle(Text("Watchlist"))
-                .navigationBarItems(leading: EditButton())
                 .toolbar {
-                    Button {} label: {
-                        Label("Add Stock", systemImage: "plus")
+                    ToolbarItemGroup(placement: ToolbarItemPlacement.navigationBarLeading) {
+                        EditButton().buttonStyle(.bordered)
+                    }
+                    
+                    ToolbarItemGroup(placement: ToolbarItemPlacement.navigationBarTrailing) {
+                        Button {SearchView.toggle() } label: {Image(systemName: "plus") }.sheet(isPresented: $SearchView, onDismiss:{  }, content: { UnitedStocks.SearchView()
+                        }).buttonStyle(.bordered)
                     }
                 }
-                .searchable(text: $searchStock, placement: .navigationBarDrawer(displayMode: .always))
         }
     }
 }
 
 struct WatchlistView_Previews: PreviewProvider {
     static var previews: some View {
-        StockViews()
+        ViewStock()
     }
 }
