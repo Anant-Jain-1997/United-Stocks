@@ -9,7 +9,7 @@ import Foundation
 
 class User : ObservableObject, Identifiable {
     //initializer sets all member variables
-    init(name: String,  username: String, password: String, age: Int, favStock: String) {
+    init(name: String,  username: String, password: String, age: String, favStock: String) {
         self.name = name
         self.age = age
         self.password = password
@@ -21,7 +21,7 @@ class User : ObservableObject, Identifiable {
     @Published var name: String
     @Published var username: String
     @Published var password: String
-    @Published var age: Int
+    @Published var age: String
     @Published var favStock: String
 }
 

@@ -175,30 +175,24 @@ struct UserInformation: View {
         NavigationView {
             GeometryReader { geometry in
                 VStack {
+                    
                     VStack {
-                        Image("Duck")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 100)
-                            .clipShape(Circle())
-                            .overlay(Circle()
-                                .stroke(lineWidth: 3)
-                                .foregroundColor(.blue))
-                    }
-                    VStack {
-                        List {
-                        Section(header: Text("User Settings")) {
-                            Text("Current Name: \(name)")
-                            
-                            Text("User Name: \(username)")
-                            
-                            Text("Current Password: *********")
-                            
-                            Text("Age: \(age)")
-                            
-                            Text("Favorite Stock: \(favStock)")
-                        }
-                    }
+                        VStack {
+                            List {
+                                Section(header: Text("User Information")) {
+                                    Text("Current Name: \(name)")
+                                    
+                                    Text("User Name: \(username)")
+                                    
+                                    Text("Current Password: *********")
+                                    
+                                    Text("Age: \(age)")
+                                    
+                                    Text("Favorite Stock: \(favStock)")
+                                }
+                            }
+                        }.frame(height: geometry.size.height / 2)
+
                         VStack {
                             List {
                                 Section(header: Text("User Settings")) {
@@ -219,7 +213,8 @@ struct UserInformation: View {
                                     }
                                 }
                             }
-                        }
+                        }.frame(height: geometry.size.height / 2)
+
                     }
                     Spacer()
                 }
@@ -249,18 +244,26 @@ struct UserViews_Previews: PreviewProvider {
 struct UserSigningIn: View {
     @AppStorage("name") var name = "Titan"
     
-    @AppStorage("username") var username = ""
-    @AppStorage("password") var password = ""
+    @AppStorage("username") var username = "admin"
+    @AppStorage("password") var password = "fullerton"
     @State var wrongUsername: Float = 0
     @State var wrongPassword: Float  = 0
     @State var showingSignInScreen = false
     
-    @AppStorage("age") var age = "20"
+    @AppStorage("age") var age = "18"
     @AppStorage("favStock") var favStock = "Tesla"
 
     @EnvironmentObject var manager: UserManager
-    @StateObject var user = User(name: "", username: "", password: "", age: 0, favStock: "")
+    @StateObject var user = User(name: "", username: "", password: "", age: "", favStock: "")
     
+    func changeUserProperties(name: String, username: String, password: String, age: String, favStock: String){
+        user.name = name
+        user.username = username.lowercased()
+        user.password = password.lowercased()
+        user.age = age
+        user.favStock = favStock
+        
+    }
     var body: some View {
         NavigationView {
             VStack {
@@ -278,6 +281,7 @@ struct UserSigningIn: View {
                         .modifier(UserTextFieldMod())      .border(.red, width: CGFloat(wrongPassword))
                     
                     Button("Sign In") {
+                        changeUserProperties(name: name, username: username, password: password, age: age, favStock: favStock)
                         authenticateUser(username: username, password: password)
                         }
                     .foregroundColor(.white)
@@ -294,9 +298,9 @@ struct UserSigningIn: View {
     }
     
     func authenticateUser(username: String, password: String) {
-        if username.lowercased() == "admin" {
+        if username.lowercased() == user.username {
             wrongUsername = 0
-            if password.lowercased() == "fullerton" {
+            if password.lowercased() == user.password {
                 wrongPassword = 0
                 showingSignInScreen = true
             } else {
