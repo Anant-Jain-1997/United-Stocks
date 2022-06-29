@@ -10,114 +10,9 @@ import SwiftUI
 struct UserViews: View {
     @StateObject var manager = UserManager()
     var body: some View {
-        CreateUser().environmentObject(manager)
+        UserSigningIn().environmentObject(manager)
     }
 }
-
-struct CreateUser: View {
-    
-    @StateObject var user = User(name: "", username: "", password: "", age: 0, favStock: "")
-    @AppStorage("sizeMultiplier") var sizeMultiplier = 1.0
-    @AppStorage("name") var name: String = ""
-    @AppStorage("username") var username: String = ""
-    @AppStorage("password") var password: String = ""
-    @AppStorage("age") var age: String = ""
-    @AppStorage("favStock") var favStock: String = ""
-    
-    @State var message: String = ""
-    
-    @EnvironmentObject var manager: UserManager
-    var body: some View {
-        NavigationView {
-            VStack {
-                Text("Create United Stock Account").modifier(UserTitlesMod())
-                VStack {
-                    HStack {
-                        Spacer()
-                        Text("Name:     ")
-                        TextField("Name", text: $name).modifier(UserTextFieldMod())
-                        Spacer()
-                    }
-                    HStack {
-                        Spacer()
-                        Text("Username: ")
-                        TextField("Username", text: $username).modifier(UserTextFieldMod())
-                        Spacer()
-                    }
-                    HStack {
-                        Spacer()
-                        Text("Password: ")
-                        TextField("Password", text: $password).modifier(UserTextFieldMod())
-                        Spacer()
-                    }
-                    HStack {
-                        Spacer()
-                        Text("Age:      ")
-                        TextField("Age", text: $age).modifier(UserTextFieldMod())
-                        Spacer()
-                    }
-                    HStack {
-                        Spacer()
-                        Text("Favorite Stock: ")
-                        TextField("Favorite Stock", text: $favStock).modifier(UserTextFieldMod())
-                        Spacer()
-                    }
-                }.modifier(UserSignInMod())
-                HStack {
-                    Button( action: {
-                        if let validAge = Int(age),
-                           validAge > 17,
-                           !name.isEmpty,
-                           !username.isEmpty,
-                           !password.isEmpty,
-                           !favStock.isEmpty {
-                            user.name = name
-                            user.username = username
-                            user.password = password
-                            user.favStock = favStock
-                            user.age = validAge
-                            
-                            manager.applyUser(user)
-                            message = "was added! Please Sign In Now"
-                            
-                            name = ""
-                            username = ""
-                            password = ""
-                            age = ""
-                            favStock = ""
-                        } else {
-                            user.name = name
-                            user.username = username
-                            message = " is not a valid User, must be at least 18 or fill in all blanks"
-                        }
-                    }){
-                        Text("Add User").modifier(UserLinkButtonMod())
-                    }
-                }
-                HStack {
-                    Spacer()
-                    SignInWarning(message: $message, user: user).modifier(WarningTextMod())
-                    Spacer()
-                }
-                Spacer()
-                VStack {
-                    Text("Already A User?")
-                    NavigationLink(destination: UserProfile(name: $name, username: $username, password: $password, age: $age, favStock: $favStock)) {
-                        Text("Go To Profile")
-                            .modifier(UserLinkButtonMod())
-                    }
-                    NavigationLink(destination: UserSignIn(name: $name, username: $username, password: $password, age: $age, favStock: $favStock, message: $message )) {
-                        Text("Sign In")
-                            .modifier(UserLinkButtonMod())
-                    }
-                }
-            }.modifier(UserInfoTextMod())
-        }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
-    }
-}
-
 
 
 struct SignInWarning: View {
@@ -134,16 +29,18 @@ struct SignInWarning: View {
     }
 }
 
-
-
 struct UserSignIn: View {
+    @State var tempUsername: String = ""
+    @State var tempPassword: String = ""
+    
     @Binding var name: String
     @Binding var username: String
     @Binding var password: String
     @Binding var age: String
     @Binding var favStock: String
     
-    @Binding var message: String
+    @State var hiddenSignIn: Bool = true
+    @State var warning: String = ""
     
     @EnvironmentObject var manager: UserManager
     
@@ -151,51 +48,47 @@ struct UserSignIn: View {
         NavigationView {
             VStack {
                 HStack {
+                    Text("United Stock").modifier(UserTitlesMod())
+                }
+                VStack {
+                HStack {
                     Spacer()
                     Text("Username: ")
-                    TextField("Username", text: $username).modifier(UserTextFieldMod())
+                    TextField("Username", text: $tempUsername).modifier(UserTextFieldMod())
                     Spacer()
                 }
                 HStack {
                     Spacer()
                     Text("Password: ")
-                    TextField("Password", text: $password).modifier(UserTextFieldMod())
+                    TextField("Password", text: $tempPassword).modifier(UserTextFieldMod())
                     Spacer()
                 }
-            }.modifier(UserSignInMod())
-        }
-    }
-}
-
-struct UserPreview: View {
-    @Binding var name: String
-    @Binding var username: String
-    @Binding var password: String
-    @Binding var age: String
-    @Binding var favStock: String
-    
-    
-    var body: some View {
-        NavigationView {
-            VStack {
-                Text("User Preview").modifier(UserSubTitlesMod())
-                VStack {
-                    Text( "Name :  \(name)" )
-                    Text( "Username :  \(username)" )
-                    Text( "Password: \(password)" )
-                    Text( "Age :  \(age)" )
-                    Text( "Favorite Stock :  \(favStock)" )
-                }.background(.yellow)
-                NavigationLink(destination: UserSettings(name: $name, username: $username, password: $password, age: $age, favStock: $favStock)) {
-                    Text("⚙️Change User Info⚙️").modifier(UserLinkButtonMod())
+                }.modifier(UserSignInMod())
+                HStack {
+                    Button( action: {
+                        if tempUsername == username && tempPassword == password {
+                            
+                            warning = "is a valid User"
+                        } else {
+                            warning = " is not a valid User, please fix username or password!"
+                        }
+                    }
+                    ){
+                        Text("Verify Account").modifier(UserLinkButtonMod())
+                    }
+                    HStack {
+                        Spacer()
+                        Text("\(tempUsername) \(warning)")
+                        Spacer()
+                    }
                 }
-            }.modifier(UserInfoTextMod()).navigationBarHidden(true)
-                .navigationBarBackButtonHidden(true)
-        }
+                Spacer()
+            }
+            
+        }.navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
-
-
 struct UserProfile: View {
     @Binding var name: String
     @Binding var username: String
@@ -211,22 +104,11 @@ struct UserProfile: View {
                                 Image(systemName: "magnifyingglass")
                                 Text("Search")
                             }
-            UserPreview(name: $name, username: $username, password: $password, age: $age, favStock: $favStock)
-                                .tabItem {
-                                    Image(systemName: "car")
-                                    Text("User Preview")
-                                }
             UserInformation(name: $name, username: $username, password: $password, age: $age, favStock: $favStock)
                             .tabItem {
                                 Image(systemName: "person")
                                 Text("User Info")
                             }
-            UserSettings(name: $name, username: $username, password: $password, age: $age, favStock: $favStock)
-                            .tabItem {
-                                Image(systemName: "wrench")
-                                Text("User Settings")
-                            }
-
         }
         }.navigationBarHidden(true)
          .navigationBarBackButtonHidden(true)
@@ -234,6 +116,8 @@ struct UserProfile: View {
 }
 
 
+/*
+ //User Settings have been merge with the user info to allow other tabs to take its place since there is a 5 tab limit
 struct UserSettings: View {
     @Binding var name: String
     @Binding var username: String
@@ -244,22 +128,31 @@ struct UserSettings: View {
     var body: some View {
         NavigationView {
             VStack {
+                VStack {
+                    Image("Duck")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100)
+                        .clipShape(Circle())
+                        .overlay(Circle()
+                            .stroke(lineWidth: 3)
+                            .foregroundColor(.blue))
+                }
                 List {
                     Section(header: Text("User Settings")) {
-                        NavigationLink(destination: Text("Set New Name To:")) {
+                        NavigationLink(destination: TextField("Change Name", text: $name).modifier(UserTextFieldMod())) {
                             Text("Change Name")
                         }
-                        NavigationLink(destination: Text("Set New User Name To:")
-                        ) {
+                        NavigationLink(destination: TextField("Change Username", text: $username).modifier(UserTextFieldMod())) {
                             Text("Change User Name")
                         }
-                        NavigationLink(destination: Text("Set New Password To: ")) {
+                        NavigationLink(destination: TextField("Change Password", text: $password).modifier(UserTextFieldMod())) {
                             Text("Change Password")
                         }
-                        NavigationLink(destination: Text("Set New Age To: ")) {
+                        NavigationLink(destination: TextField("Age", text: $age).modifier(UserTextFieldMod())) {
                             Text("Change Age ")
                         }
-                        NavigationLink(destination: Text("Set Favorite Stock To: ")) {
+                        NavigationLink(destination: TextField("Change Favorite Stock", text: $favStock).modifier(UserTextFieldMod())) {
                             Text("Change Favorite Stock")
                         }
                     }
@@ -269,6 +162,7 @@ struct UserSettings: View {
         
     }
 }
+*/
 
 struct UserInformation: View {
     @Binding var name: String
@@ -279,25 +173,61 @@ struct UserInformation: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                List {
-                    Section(header: Text("User Settings")) {
-                        
+            GeometryReader { geometry in
+                VStack {
+                    VStack {
+                        Image("Duck")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100)
+                            .clipShape(Circle())
+                            .overlay(Circle()
+                                .stroke(lineWidth: 3)
+                                .foregroundColor(.blue))
+                    }
+                    VStack {
+                        List {
+                        Section(header: Text("User Settings")) {
                             Text("Current Name: \(name)")
-                        
+                            
                             Text("User Name: \(username)")
-                        
-                            Text("Current Password: ********")
-                        
+                            
+                            Text("Current Password: *********")
+                            
                             Text("Age: \(age)")
-                        
+                            
                             Text("Favorite Stock: \(favStock)")
                         }
                     }
+                        VStack {
+                            List {
+                                Section(header: Text("User Settings")) {
+                                    NavigationLink(destination: TextField("Change Name", text: $name).modifier(UserTextFieldMod())) {
+                                        Text("Change Name")
+                                    }
+                                    NavigationLink(destination: TextField("Change Username", text: $username).modifier(UserTextFieldMod())) {
+                                        Text("Change User Name")
+                                    }
+                                    NavigationLink(destination: TextField("Change Password", text: $password).modifier(UserTextFieldMod())) {
+                                        Text("Change Password")
+                                    }
+                                    NavigationLink(destination: TextField("Age", text: $age).modifier(UserTextFieldMod())) {
+                                        Text("Change Age ")
+                                    }
+                                    NavigationLink(destination: TextField("Change Favorite Stock", text: $favStock).modifier(UserTextFieldMod())) {
+                                        Text("Change Favorite Stock")
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    Spacer()
                 }
+                Spacer()
             }.modifier(UserInfoTextMod())
         }
-        
+    }
+    
 }
 
 struct SearchFeature: View {
@@ -312,6 +242,68 @@ struct SearchFeature: View {
 
 struct UserViews_Previews: PreviewProvider {
     static var previews: some View {
-        UserViews()
+        UserSigningIn()
+    }
+}
+
+struct UserSigningIn: View {
+    @AppStorage("name") var name = "Titan"
+    
+    @AppStorage("username") var username = ""
+    @AppStorage("password") var password = ""
+    @State var wrongUsername: Float = 0
+    @State var wrongPassword: Float  = 0
+    @State var showingSignInScreen = false
+    
+    @AppStorage("age") var age = "20"
+    @AppStorage("favStock") var favStock = "Tesla"
+
+    @EnvironmentObject var manager: UserManager
+    @StateObject var user = User(name: "", username: "", password: "", age: 0, favStock: "")
+    
+    var body: some View {
+        NavigationView {
+            VStack {
+
+                VStack {
+                    Text("UnitedStock")
+                        .modifier(UserTitlesMod())
+                    
+                    TextField("Username", text: $username)
+                        .modifier(UserTextFieldMod())
+                        .border(.red, width: CGFloat(wrongUsername))
+                        
+                    
+                    TextField("Password", text: $password)
+                        .modifier(UserTextFieldMod())      .border(.red, width: CGFloat(wrongPassword))
+                    
+                    Button("Sign In") {
+                        authenticateUser(username: username, password: password)
+                        }
+                    .foregroundColor(.white)
+                    .frame(width: 300, height: 50)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                    
+                    NavigationLink(destination: UserProfile(name: $name, username: $username, password: $password, age: $age, favStock: $favStock), isActive: $showingSignInScreen) {
+                        EmptyView()
+                    }
+                }
+            }.navigationBarHidden(true)
+        }
+    }
+    
+    func authenticateUser(username: String, password: String) {
+        if username.lowercased() == "admin" {
+            wrongUsername = 0
+            if password.lowercased() == "fullerton" {
+                wrongPassword = 0
+                showingSignInScreen = true
+            } else {
+                wrongPassword = 2
+            }
+        } else {
+            wrongUsername = 2
+        }
     }
 }
