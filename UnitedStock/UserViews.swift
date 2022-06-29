@@ -118,6 +118,7 @@ struct UserProfile: View {
 
 /*
  //User Settings have been merge with the user info to allow other tabs to take its place since there is a 5 tab limit
+ //Since there is no need for it either delete or create another tab view
 struct UserSettings: View {
     @Binding var name: String
     @Binding var username: String
@@ -244,22 +245,21 @@ struct UserViews_Previews: PreviewProvider {
 struct UserSigningIn: View {
     @AppStorage("name") var name = "Titan"
     
-    @AppStorage("username") var username = "admin"
-    @AppStorage("password") var password = "fullerton"
+    @AppStorage("username") var username = ""
+    @AppStorage("password") var password = ""
     @State var wrongUsername: Float = 0
     @State var wrongPassword: Float  = 0
     @State var showingSignInScreen = false
     
-    @AppStorage("age") var age = "18"
+    @AppStorage("age") var age = "20"
     @AppStorage("favStock") var favStock = "Tesla"
 
     @EnvironmentObject var manager: UserManager
     @StateObject var user = User(name: "", username: "", password: "", age: "", favStock: "")
-    
     func changeUserProperties(name: String, username: String, password: String, age: String, favStock: String){
         user.name = name
-        user.username = username.lowercased()
-        user.password = password.lowercased()
+        user.username = username
+        user.password = password
         user.age = age
         user.favStock = favStock
         
@@ -281,7 +281,6 @@ struct UserSigningIn: View {
                         .modifier(UserTextFieldMod())      .border(.red, width: CGFloat(wrongPassword))
                     
                     Button("Sign In") {
-                        changeUserProperties(name: name, username: username, password: password, age: age, favStock: favStock)
                         authenticateUser(username: username, password: password)
                         }
                     .foregroundColor(.white)
@@ -298,9 +297,9 @@ struct UserSigningIn: View {
     }
     
     func authenticateUser(username: String, password: String) {
-        if username.lowercased() == user.username {
+        if username.lowercased() == "admin" {
             wrongUsername = 0
-            if password.lowercased() == user.password {
+            if password.lowercased() == "fullerton" {
                 wrongPassword = 0
                 showingSignInScreen = true
             } else {
