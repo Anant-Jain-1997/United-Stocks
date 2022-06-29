@@ -32,12 +32,12 @@ class SearchApi: ObservableObject {
         if let  urlString = AlphaVantageURL.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed),
            let url  = URL(string: urlString)
         {
-            let task = URLSession.shared.dataTask(with: url){
-                data, _,_ in
-                DispatchQueue.main.async{
+            let task = URLSession.shared.dataTask(with: url) {
+                data, _, _ in
+                DispatchQueue.main.async {
                     let jsonDecoder = JSONDecoder()
-                    if let  validData = data, let result = try? jsonDecoder.decode(APIResults.self, from: validData){
-                        if  result.Symbol.count > 0 {
+                    if let validData = data, let result = try? jsonDecoder.decode(APIResults.self, from: validData) {
+                        if result.Symbol.count > 0 {
                             self.firstfound = result.Symbol
                             self.SecondFound = result.Name
                             self.ThirdFound = result.AnalystTargetPrice
@@ -48,10 +48,10 @@ class SearchApi: ObservableObject {
                         }else{
                             self.firstfound = " nothing found"
                         }
-                    }else{
+                    } else {
                         self.firstfound = " NO "
                     }
-               }
+                }
             }
             task.resume()
         }
